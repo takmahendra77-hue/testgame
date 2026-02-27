@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test 1</title>
+<style>
+body{font-family:Arial;text-align:center;background:#f2f2f2;padding:40px}
+.box{background:#fff;padding:20px;border-radius:10px;max-width:400px;margin:auto}
+</style>
+</head>
+<body>
+<div class="box">
+<h2>What is 5 + 3 ?</h2>
+<input id="ans" type="text"><br><br>
+<button onclick="check()">Submit</button>
+</div>
+
+<script>
+function sound(freq){let a=new AudioContext();let o=a.createOscillator();o.frequency.value=freq;o.connect(a.destination);o.start();setTimeout(()=>o.stop(),200);}
+function check(){
+let a=document.getElementById("ans").value.toLowerCase();
+if(a==="8"){sound(600);window.location="test2.html";}
+else{sound(200);alert("Wrong answer");}
+}
+</script>
+</body>
+</html>
