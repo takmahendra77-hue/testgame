@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test 4</title>
+<style>body{font-family:Arial;text-align:center;background:#f2f2f2;padding:40px}.box{background:#fff;padding:20px;border-radius:10px;max-width:400px;margin:auto}</style>
+</head>
+<body>
+<div class="box">
+<h2>3 × 3 = ?</h2>
+<input id="ans"><br><br>
+<button onclick="check()">Submit</button>
+</div>
+<script>
+function sound(f){let a=new AudioContext();let o=a.createOscillator();o.frequency.value=f;o.connect(a.destination);o.start();setTimeout(()=>o.stop(),200);}
+function check(){let a=document.getElementById("ans").value.toLowerCase();if(a==="9"){sound(600);location="test5.html";}else{sound(200);alert("Wrong answer");}}
+</script>
+</body>
+</html>
